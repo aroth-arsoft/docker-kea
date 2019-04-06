@@ -1,0 +1,40 @@
+version: "3.2"
+services:
+    kea:
+        #image: "tomcraftmc/kea-dhcp:latest"
+        build: ./kea
+        network_mode: host
+        volumes:
+            - type: volume
+              source: kea_data
+              target: /usr/local/etc/kea
+        privileged: true
+        ports:
+            - "67:67"
+            - "8000:8000"
+        #stdin_open: true
+        #tty: true
+        #entrypoint:
+            #- /bin/sh
+        #entrypoint:
+            #- kea-dhcp4
+            #- -c
+            #- /etc/kea-config.json
+    glass:
+        build: ./glass
+        network_mode: host
+        volumes:
+            - type: volume
+              source: glass_config
+              target: /home/node/app/config
+        ports:
+            - "8080:8080"
+            - "3000:3000"
+        #stdin_open: true
+        #tty: true
+        #entrypoint:
+            #- /bin/sh
+
+volumes:
+    kea_data:
+    glass_config:

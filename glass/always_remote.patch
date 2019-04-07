@@ -1,5 +1,5 @@
---- app.js.org	2019-04-07 10:12:29.000000000 +0200
-+++ app.js	2019-04-07 10:13:55.228819262 +0200
+--- app.js.org	2019-04-07 10:38:17.603225452 +0200
++++ app.js	2019-04-07 10:38:03.935809660 +0200
 @@ -114,8 +114,8 @@
  }
  
@@ -11,3 +11,13 @@
      global.kea_server.local_server = 1;
      host_name = execSync("cat /etc/hostname").toString().replace("\n", "");
      global.kea_server.run_status = execSync("keactrl status").toString();
+@@ -188,7 +188,8 @@
+ 
+     return new Promise(function (resolve, reject) {
+     
+-        if (global.anterius_config.server_addr == 'localhost' || global.anterius_config.server_addr == '127.0.0.1') {
++        //if (global.anterius_config.server_addr == 'localhost' || global.anterius_config.server_addr == '127.0.0.1') {
++        if (0) {
+             global.kea_server.local_server = 1;
+             
+             host_name = execSync("cat /etc/hostname").toString().replace("\n", "");

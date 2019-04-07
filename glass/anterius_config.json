@@ -1,5 +1,5 @@
 {
-  "server_addr": "127.0.0.2",
+  "server_addr": "127.0.0.1",
   "server_port": "8000",
   "stat_refresh_interval": "5",
   "admin_user": "keaadmin",
@@ -9,7 +9,7 @@
   "server_host_list": [
     {
       "hostname": "Local Machine",
-      "svr_addr": "127.0.0.2",
+      "svr_addr": "127.0.0.1",
       "svr_port": "8000"
     }
   ],
